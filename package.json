@@ -1,0 +1,26 @@
+{
+  "name": "projeto_guiado_contatos_api",
+  "version": "1.0.0",
+  "description": "projeto de servidor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lidianeangelo/Projeto_Guiado_Contatos_API.git"
+  },
+  "author": "Lidiane Angelo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lidianeangelo/Projeto_Guiado_Contatos_API/issues"
+  },
+  "homepage": "https://github.com/Lidianeangelo/Projeto_Guiado_Contatos_API#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13",
+    "nodemon": "^2.0.6"
+  }
+}
