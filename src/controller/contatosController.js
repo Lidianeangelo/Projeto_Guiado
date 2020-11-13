@@ -13,11 +13,11 @@ const getAllContatos = (request, response) => {
     })
 }
 
-/*const addContato = (request, response) => {
-    const contatoBody = request.params.body //pegando o body que o usuario digitou
-    const contato = new contatosCollection(contatoBody) //criando um novo dado com o body
+const addContato = (request, response) => {
+    const contatoBody = request.body //pegando o body que o usuario digitou
+    const contatos = new contatosCollection(contatoBody) //criando um novo dado com o body
     
-    contato.save((error)=>{
+    contatos.save((error)=>{
         if(error){
             return response.status(400).send(error)
         }else{
@@ -27,9 +27,11 @@ const getAllContatos = (request, response) => {
             })
         }
     })
-}*/
+}
+
+
 
 module.exports = {
-    getAllContatos
-    //addContato
+    getAllContatos,
+    addContato
 }
