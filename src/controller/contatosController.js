@@ -13,6 +13,47 @@ const getAllContatos = (request, response) => {
     })
 }
 
+
+const getContatosById=(request,response)=>{
+    const id=request.params.id
+
+    contatosCollection.find({_id:id},(error,contatos)=>{
+        if (error){
+            return response.status(500).send(error);
+        }else if (contatos){
+            return response.status(400).send({
+                mensagem: "GET por ID feito com sucesso",
+                contatos
+            })
+
+        }else{
+            return response.status(404).send("Id não encontrado")
+        }
+       
+    })
+}
+
+const getContatosByNome=(request,response)=>{
+    const nome=request.params.nome
+
+    contatosCollection.find({nome:nome},(error,contatos)=>{
+        if (error){
+            return response.status(500).send(error);
+        }else if (contatos){
+            return response.status(400).send({
+                mensagem: "GET por nome feito com sucesso",
+                contatos
+            })
+
+        }else{
+            return response.status(404).send("Nome não encontrado")
+        }
+       
+    })
+}
+
+
+
 const addContato = (request, response) => {
     const contatoBody = request.body //pegando o body que o usuario digitou
     const contatos = new contatosCollection(contatoBody) //criando um novo dado com o body
@@ -33,5 +74,7 @@ const addContato = (request, response) => {
 
 module.exports = {
     getAllContatos,
+    getContatosById,
+    getContatosByNome,
     addContato
 }
